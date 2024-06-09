@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 def read_data():
     data = []
-    with open('data.txt', 'r') as file:
+    with open('titumovistar.txt', 'r') as file:
         lines = file.readlines()
         for line in lines:
             id, name = line.strip().split(',')
