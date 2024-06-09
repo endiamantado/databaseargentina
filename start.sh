@@ -1,3 +1,3 @@
 #!/bin/bash
-source venv/bin/activate  # Activa el entorno virtual
-exec python app.py  # Ejecuta tu aplicación Flask con Python
+source /path/to/venv/bin/activate  # Reemplaza /path/to/venv con la ruta real a tu entorno virtual
+exec python app.py
