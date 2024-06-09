@@ -9,6 +9,13 @@ def read_data():
         data = json.load(file)
     return data
 
+with open('titumovistar.txt', 'r') as file:
+    for i, line in enumerate(file):
+        try:
+            json_data = json.loads(line)
+        except json.JSONDecodeError as e:
+            print(f"Error en la línea {i+1}: {e}")
+
 @app.route('/')
 def index():
     return '¡Hola, Render! Esta es la página de inicio.'
