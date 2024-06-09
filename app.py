@@ -1,14 +1,11 @@
 from flask import Flask, jsonify, request
+import json
 
 app = Flask(__name__)
 
 def read_data():
-    data = []
     with open('titumovistar.txt', 'r') as file:
-        lines = file.readlines()
-        for line in lines:
-            id, name = line.strip().split(',')
-            data.append({'id': int(id), 'name': name})
+        data = json.load(file)
     return data
 
 @app.route('/data', methods=['GET'])
@@ -16,11 +13,11 @@ def get_data():
     data = read_data()
     return jsonify(data)
 
-@app.route('/data/<int:data_id>', methods=['GET'])
-def get_data_by_id(data_id):
+@app.route('/data/celular/<int:celular>', methods=['GET'])
+def get_data_by_celular(celular):
     data = read_data()
     for item in data:
-        if item['id'] == data_id:
+        if item['celular'] == celular:
             return jsonify(item)
     return jsonify({'error': 'Data not found'}), 404
 
