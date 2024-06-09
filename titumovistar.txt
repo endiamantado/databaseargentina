@@ -1617,8 +1617,4 @@
                 "razonSocial": "ABELLA, LARA AGUSTINA",
                 "correoElectronico": "dolidolores1515@gmail.com",
                 "celular": 294405891
-            },
-            {
-                "wapUsuarioID": 67753,
-                "wapPersonaID": 85984,
-                "userName": "abellaluciana@hot
+            }
