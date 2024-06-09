@@ -6,8 +6,15 @@ app = Flask(__name__)
 
 def read_data():
     with open('titumovistar.txt', 'r') as file:
-        data = json.load(file)
-    return data
+        for i, line in enumerate(file):
+            try:
+                json_data = json.loads(line)
+                # Procesar el objeto JSON, por ejemplo, imprimirlo
+                print(json_data)
+            except json.JSONDecodeError as e:
+                print(f"Error en la línea {i+1}: {e}")
+
+read_data()
 
 with open('titumovistar.txt', 'r') as file:
     for i, line in enumerate(file):
