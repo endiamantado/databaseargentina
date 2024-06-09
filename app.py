@@ -1,5 +1,5 @@
-from flask import Flask, jsonify, request
-import json
+import os
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -26,4 +26,5 @@ def get_data_by_celular(celular):
     return jsonify({'error': 'Data not found'}), 404
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
