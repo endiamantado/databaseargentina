@@ -8,6 +8,10 @@ def read_data():
         data = json.load(file)
     return data
 
+@app.route('/')
+def index():
+    return '¡Hola, Render! Esta es la página de inicio.'
+
 @app.route('/data', methods=['GET'])
 def get_data():
     data = read_data()
